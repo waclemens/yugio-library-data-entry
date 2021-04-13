@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Card Entry</title>
+    <link href="cards-entry.css" rel="stylesheet" type="text/css">
+    <script src="cards-entry.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <input 
+        type="input"
+        placeholder="Enter card name..."
+        value=""
+        onchange="handleSearch(this.value)"
+        class="search-input"/>
+      <input type="button" value="Download .csv" onclick="handleCsvDownloadClick()"/>
+      <input type="button" value="Download .json" onclick="handleJsonDownloadClick()"/>
+      <input type="button" value="-" class="zoom-btn"/>
+      <input type="button" value="+" class="zoom-btn"/>
+    </div>
+
+    <div>
+      <div class="search-result-container card-container-size">
+        
+      </div>
+    </div>
+
+    <div>
+      <div class="current-selected-cards-container card-container-size">
+        
+      </div>
+    </div>
+  </body>
+</html>

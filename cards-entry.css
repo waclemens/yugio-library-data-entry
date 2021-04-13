@@ -1,0 +1,16 @@
+.card-container-size {
+    height: 26rem;
+    border: .3rem solid;
+    border-radius: .3rem;
+    padding: .3rem;
+    margin: .3rem 0;
+    overflow: auto;
+}
+
+.card {
+    margin: .2rem;
+}
+
+.zoom-btn {
+    width: 2rem;
+}
