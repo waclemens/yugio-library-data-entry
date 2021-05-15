@@ -21,12 +21,26 @@ const handleSearch = async (value) => {
 
 const handleImgAddClick = (event) => {
 	let card = JSON.parse(event.target.getAttribute('card-data'));
-
+	if(ifThree(card)) {displaySnackbar('Already have three...'); return;}
 	card['uuid'] = uuid();
 	selectedCards.push(card);
 	generateSelection();
 
 	localStorage.saveProgress = JSON.stringify(selectedCards);
+};
+
+const ifThree = (card) => {
+	const excludeThree = document.querySelector('.enable-checkbox').checked;
+	const cardCount =  selectedCards.filter(sel => sel.name === card.name);
+	if(cardCount.length >= 3 && excludeThree) return true;
+	return false;
+};
+
+const displaySnackbar = (message) => {
+	let snackbar = document.querySelector('.snackbar');
+	snackbar.innerHTML = message;
+	snackbar.classList.add('show');
+	setTimeout(() => {snackbar.classList.remove('show');}, 3000);
 };
 
 const handleImgRemoveClick = (event) => {
